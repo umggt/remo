@@ -1,5 +1,5 @@
-/// <reference path="../typings/angularjs/angular.d.ts"/>
-(function () {	
+(function () {
+	
 	angular.module('remo', ['ui.router'])
 		.config(configureRoutes);
 	
@@ -9,14 +9,10 @@
 	function configureRoutes($stateProvider, $urlRouterProvider) {
 		
 		$urlRouterProvider
-			.when('', '/')
-			.otherwise("/error/404");
+			.when('', '/dashboard')
+			.otherwise('/error/404');
 		
 		$stateProvider
-			.state('home', {
-				url: '/',
-				templateUrl: 'templates/home.html'
-			})
 			.state('error', {
 				url: '/error',
 				template: '<div ui-view></div>',
@@ -25,7 +21,23 @@
 			.state('error.404', {
 				url: '/404',
 				templateUrl: 'templates/error-404.html'
+			})
+			.state('dashboard', {
+				url: '/dashboard',
+				templateUrl: 'templates/dashboard.html'
+			})
+			.state('procesador', {
+				url: '/procesador',
+				templateUrl: 'templates/procesador.html' 
+			})
+			.state('memoria', {
+				url: '/memoria',
+				templateUrl: 'templates/memoria.html'
+			})
+			.state('disco', {
+				url: '/disco',
+				templateUrl: 'templates/disco.html'
 			});
 	}
 	
-}(angular));
+}());

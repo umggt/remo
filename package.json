@@ -28,6 +28,7 @@
     "electron-prebuilt": "^0.27.1",
     "font-awesome": "^4.3.0",
     "gulp": "^3.8.11",
-    "gulp-run": "^1.6.8"
+    "gulp-run": "^1.6.8",
+    "jquery": "^2.1.4"
   }
 }
