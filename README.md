@@ -9,7 +9,7 @@ Este es un proyecto desarrollado para el curso de Sistemas Operativos Abiertos d
 Notas:
 
 * Instalar node:
-  * `sudo apt-get install nodejs nodejs-legacy npm`git
+  * `sudo apt-get install nodejs nodejs-legacy npm git`
 * Dar permisos a los scripts:
   * `chmod +x electron`
   * `chmod +x electron-packager`
