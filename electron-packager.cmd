@@ -1,2 +1,2 @@
 @echo off
-node "%~dp0\node_modules\electron-packager\cli.js" %*
+"%~dp0\node_modules\.bin\electron-packager.cmd" "%*"
