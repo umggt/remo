@@ -9,10 +9,6 @@
 	 */
 	function configureRoutes($stateProvider, $urlRouterProvider) {
 		
-		$urlRouterProvider
-			.when('', '/dashboard')
-			.otherwise('/error/404');
-		
 		$stateProvider
 			.state('error', {
 				url: '/error',
@@ -22,6 +18,12 @@
 			.state('error.404', {
 				url: '/404',
 				templateUrl: 'templates/error-404.html'
+			})
+			.state('home', {
+				url: '/',
+				controller: function ($state) {
+					$state.transitionTo('dashboard');
+				}
 			})
 			.state('dashboard', {
 				url: '/dashboard',
@@ -41,6 +43,10 @@
 				url: '/disco',
 				templateUrl: 'templates/disco.html'
 			});
+			
+		$urlRouterProvider
+			.when('', '/dashboard')
+			.otherwise('/error/404');
 	}
 	
 }());

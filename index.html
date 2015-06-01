@@ -8,7 +8,8 @@
     
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.css" />
-    <link rel="stylesheet" href="./styles/sb-admin.css" /> 
+    <link rel="stylesheet" href="./styles/sb-admin.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
   </head>
   <body>
     <div id="wrapper">
@@ -28,16 +29,16 @@
           <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
           <div class="collapse navbar-collapse navbar-ex1-collapse">
               <ul class="nav navbar-nav side-nav">
-                  <li class="active">
+                  <li ui-sref-active="active">
                       <a ui-sref="dashboard"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                   </li>
-                  <li>
+                  <li ui-sref-active="active">
                       <a ui-sref="procesador"><i class="fa fa-fw fa-server"></i> Procesador</a>
                   </li>
-                  <li>
+                  <li ui-sref-active="active">
                       <a ui-sref="memoria"><i class="fa fa-fw fa-table"></i> Memoria</a>
                   </li>
-                  <li>
+                  <li ui-sref-active="active">
                       <a ui-sref="disco"><i class="fa fa-fw fa-database"></i> Disco</a>
                   </li>
               </ul>
