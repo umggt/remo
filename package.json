@@ -29,6 +29,7 @@
     "font-awesome": "^4.3.0",
     "gulp": "^3.8.11",
     "gulp-run": "^1.6.8",
-    "jquery": "^2.1.4"
+    "jquery": "^2.1.4",
+    "mousetrap": "^1.5.2"
   }
 }

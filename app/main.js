@@ -1,5 +1,6 @@
+/// <reference path="../typings/angularjs/angular.d.ts"/>
 (function () {
-	
+
 	angular.module('remo', ['ui.router'])
 		.config(configureRoutes);
 	
@@ -28,7 +29,9 @@
 			})
 			.state('procesador', {
 				url: '/procesador',
-				templateUrl: 'templates/procesador.html' 
+				templateUrl: 'templates/procesador.html',
+				controller: 'ProcesadorController',
+				controllerAs: 'vm'
 			})
 			.state('memoria', {
 				url: '/memoria',
