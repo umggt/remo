@@ -58,9 +58,10 @@
 						p.threads = parseInt($6, 10);
 						p.prioridad = parseInt($7, 10);
 						p.procesador = parseInt($8, 10);
-						p.memriaVirtual = parseFloat($9);
+						p.memoriaVirtual = parseFloat($9);
 						p.comando = $10;
 						p.parametros = $11;
+						p.nombre = p.comando.substr(p.comando.lastIndexOf('/') + 1);
 						
 						result.push(p);
 					});

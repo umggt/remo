@@ -61,7 +61,9 @@
 			if (lastOutput !== output) {
 				if (!lastProcesses) {
 					lastProcesses = processes;
-					processChange({ addedItems: lastProcesses });
+					if (lastProcesses.length > 0) {
+						processChange({ addedItems: lastProcesses });
+					}
 				}
 				else {
 					compareLists(lastProcesses, processes);

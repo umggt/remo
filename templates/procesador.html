@@ -1,36 +1,44 @@
 <h2>Procesador</h2>
 
-<!--  -->
+<div class="panel panel-default">
+	<div class="panel-heading">Procesos en ejecuci&oacute;n</div>
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-md-12 table-responsive">
+				<table class="table table-striped table-bordered table-condensed table-hover">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>CPU</th>
+							<th>Memoria</th>
+							<th>Tiempo</th>
+							<th>Estado</th>
+							<th>Sub-Procesos</th>
+							<th>Prioridad</th>
+							<th>Procesador</th>
+							<th>Memoria Virtual</th>
+							<th>Nombre</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="item in vm.procesos" title="{ item.comando }">
+							<td>{{ item.id }}</td>
+							<td>{{ item.cpu }}</td>
+							<td>{{ item.memoria }}</td>
+							<td>{{ item.tiempo }}</td>
+							<td>{{ item.estado }}</td>
+							<td>{{ item.threads }}</td>
+							<td>{{ item.prioridad }}</td>
+							<td>{{ item.procesador }}</td>
+							<td>{{ item.memoriaVirtual }}</td>
+							<td>{{ item.nombre }}</td>
+							<td><a ng-click="mv.finalizar(item)" class="text-danger"><i class="glyphicon glyphicon-remove"></i></a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
 
-<table class="table table-striped table-bordered table-condensed table-hover">
-	<thead>
-		<tr>
-			<th>Id</th>
-			<th>CPU</th>
-			<th>Memoria</th>
-			<th>Tiempo</th>
-			<th>Estado</th>
-			<th>nlwp</th>
-			<th>pri</th>
-			<th>Procesador</th>
-			<th>vsize</th>
-			<th>Comando</th>
-			<th></th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr ng-repeat="item in vm.procesos">
-			<td>{{ item.id }}</td>
-			<td>{{ item.cpu }}</td>
-			<td>{{ item.pmem }}</td>
-			<td>{{ item.time }}</td>
-			<td>{{ item.stat }}</td>
-			<td>{{ item.nlwp }}</td>
-			<td>{{ item.pri }}</td>
-			<td>{{ item.psr }}</td>
-			<td>{{ item.vsize }}</td>
-			<td>{{ item.command }}</td>
-			<td><a ng-click="mv.finalizar(item)" class="text-danger"><i class="glyphicon glyphicon-remove"></i></a></td>
-		</tr>
-	</tbody>
-</table>
