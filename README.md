@@ -6,9 +6,7 @@ Este es un proyecto desarrollado para el curso de Sistemas Operativos Abiertos d
 
 ## Ejecutar desde el c처digo fuente
 
-Para poder ejecutar la aplicaci처n desde el c처digo fuente, se debe tener instalado [NodeJS][node], el [Node Package Manager][npm] y para poder clonar el c처digo se requiere [git][git].
-
-Para instalar los parquetes requeridos desde la terminal en ubuntu, ejecutar el siguiente comando:
+Para poder ejecutar la aplicaci처n desde el c처digo fuente se debe tener instalado [NodeJS][node] y el [Node Package Manager][npm], para poder clonar el c처digo se requiere [git][git]. Para instalar estos programas desde la terminal en [Ubuntu][ubuntu], ejecutar el siguiente comando:
 
     sudo apt-get install nodejs nodejs-legacy npm git
 
@@ -38,3 +36,4 @@ Si desean editar el c처digo fuente con el mismo editor que yo lo he hecho deber�
 [npm]:    https://www.npmjs.com/
 [git]:    http://git-scm.com/
 [VSCode]: https://code.visualstudio.com/
+[ubuntu]: http://www.ubuntu.com/
