@@ -8,6 +8,7 @@
     
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="./node_modules/toastr/toastr.css" />
     <link rel="stylesheet" href="./styles/sb-admin.css" />
     <link rel="stylesheet" href="./styles/main.css" />
   </head>
@@ -67,9 +68,10 @@
     </div>
     
     <script src="./node_modules/mousetrap/mousetrap.js"></script>
-    <script src="./node_modules/jquery/dist/jquery.js"></script>
     <script>window.$ = window.jQuery = require('./node_modules/jquery/dist/jquery.js');</script>
+    <script>window.toastr = require('./node_modules/toastr/toastr.js');</script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="./node_modules/bootbox/bootbox.js"></script>
     <script src="./node_modules/angular/angular.js"></script>
     <script src="./node_modules/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="./app/keysMap.js"></script>
@@ -77,6 +79,7 @@
     <script src="./app/decorators/angularServicesDecorator.js"></script>
     <script src="./app/directives/toWindowHeight.js"></script>
     <script src="./app/services/ubuntuProcessService.js"></script>
+    <script src="./app/services/testProcessService.js"></script>
     <script src="./app/services/ubuntuTopService.js"></script>
     <script src="./app/services/processService.js"></script>
     <script src="./app/controllers/ProcesadorController.js"></script>

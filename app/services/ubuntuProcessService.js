@@ -4,6 +4,7 @@
 	var exec = require('child_process').exec;
 	var pattern = /^\s+?([^\s]+)\s+([^\s]+)\s+([^\s]+)\s+([^\s]+)\s+([^\s]+)\s+([^\s]+)\s+([^\s]+)\s+([^\s]+)\s+([^\s]+)\s+([^\s]+)\s+(.+)$/;
 	var cmd = 'ps -eo pid,%cpu,%mem,time,stat,nlwp,pri,psr,vsize,args';
+	
 	var estados = {
 		'D': 'Suspendido (I/O)',
 		'R': 'Ejecutando',
@@ -30,6 +31,7 @@
 		var svc = this;
 		
 		svc.listProcess = listProcess;
+		svc.kill = kill;
 		
 		function listProcess() {
 			
@@ -69,6 +71,22 @@
 								
 				if (!err) {
 					defer.resolve(result);	
+				}
+				else {
+
+					defer.reject(err);
+				}
+			});
+			
+			return defer.promise;
+		}
+		
+		function kill(processId) {
+			var defer = $q.defer();
+			
+			exec('kill ' + processId, function(err, stdout, stderr) {
+				if (!err) {
+					defer.resolve(stdout);	
 				}
 				else {
 

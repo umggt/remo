@@ -10,8 +10,8 @@
 						<tr>
 							<th>#</th>
 							<th>Id</th>
-							<th>CPU</th>
-							<th>Memoria</th>
+							<th>% CPU</th>
+							<th>% Memoria</th>
 							<th>Tiempo</th>
 							<th>Estado</th>
 							<th>Sub-Procesos</th>
@@ -23,19 +23,19 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr ng-repeat="item in vm.procesos" title="{{ item.comando }} {{ item.parametros }}">
+						<tr ng-repeat="item in vm.procesos" title="{{ item.comando }}">
 							<td>{{ $index }}</td>
 							<td>{{ item.id }}</td>
-							<td>{{ item.cpu }}</td>
-							<td>{{ item.memoria }}</td>
+							<td>{{ item.cpu | number : 2 }}</td>
+							<td>{{ item.memoria | number : 2 }}</td>
 							<td>{{ item.tiempo }}</td>
 							<td>{{ item.estado }}</td>
 							<td>{{ item.threads }}</td>
 							<td>{{ item.prioridad }}</td>
 							<td>{{ item.procesador }}</td>
-							<td>{{ item.memoriaVirtual }}</td>
+							<td>{{ item.memoriaVirtual | number : 2 }}</td>
 							<td>{{ item.nombre }}</td>
-							<td><a ng-click="mv.finalizar(item)" class="text-danger"><i class="glyphicon glyphicon-remove"></i></a></td>
+							<td><a ng-click="vm.finalizar(item)" class="text-danger"><i class="glyphicon glyphicon-remove"></i></a></td>
 						</tr>
 					</tbody>
 				</table>
