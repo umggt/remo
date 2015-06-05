@@ -66,9 +66,7 @@
 						result.push(p);
 					});
 				});
-				
-				$log.debug(result);
-				
+								
 				if (!err) {
 					defer.resolve(result);	
 				}

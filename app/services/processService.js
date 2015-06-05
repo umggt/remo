@@ -52,7 +52,6 @@
 		}
 		
 		function getProcesses() {
-			$log.debug('Ejecutando getProcess...');
 			ubuntuProcess.listProcess().success(refreshProcessList);
 		}
 		
@@ -176,8 +175,6 @@
 				result = result || {};
 				result.deletedItems = deletedItems;
 			}
-			
-			$log.debug('Result: ', result);
 			
 			if (result) {
 				processChange(result);
