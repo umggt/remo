@@ -29,21 +29,15 @@
 			})
 			.state('dashboard', {
 				url: '/dashboard',
-				templateUrl: 'templates/dashboard.html'
+				templateUrl: 'templates/dashboard.html',
+				controller: 'DashboardController',
+				controllerAs: 'vm'
 			})
 			.state('procesador', {
 				url: '/procesador',
 				templateUrl: 'templates/procesador.html',
 				controller: 'ProcesadorController',
 				controllerAs: 'vm'
-			})
-			.state('memoria', {
-				url: '/memoria',
-				templateUrl: 'templates/memoria.html'
-			})
-			.state('disco', {
-				url: '/disco',
-				templateUrl: 'templates/disco.html'
 			});
 			
 		$urlRouterProvider

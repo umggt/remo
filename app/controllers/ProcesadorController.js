@@ -57,8 +57,6 @@
 		
 		function hanCambiadoLosProcesos(datos) {
 
-				$log.debug('process changed: ', datos);
-				
 				var index = 0;
 				var subIndex = 0;
 				var item = null;
