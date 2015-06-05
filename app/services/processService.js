@@ -4,21 +4,22 @@
 	
 	angular.module('remo').service('process', processService);
 
-	var osProcessService = require('os').type() === 'Linux' ? 'ubuntuProcess' : 'testProcess';
-	processService.$inject = [osProcessService, '$timeout', '$log'];
+	var osType = require('os').type();
+	var osProcessServiceName = osType === 'Linux' ? 'ubuntuProcess' : 'testProcess';
+	processService.$inject = [osProcessServiceName, '$timeout', '$log'];
 	
 	/**
 	 * Servicio de gestion de procesos.
 	 * 
 	 * @param {remo.IUbuntuService} ubuntuProcess  asdf
 	 */
-	function processService(ubuntuProcess, $timeout, $log) {
+	function processService(osProcess, $timeout, $log) {
 		
 		var lastProcesses = null;
 		var lastOutput = null;
 		var onProcessChangeHandlers = [];
 		var svc = this;
-		var refreshTime = 6000;
+		var refreshTime = 1500;
 		
 		svc.onProcessChange = onProcessChange;
 		svc.removeOnProcessChange = removeOnProcessChange;
@@ -33,7 +34,7 @@
 		
 		function kill(processId) {
 			$log.debug('finalizando proceso ' + processId + '...');
-			return ubuntuProcess.kill(processId);
+			return osProcess.kill(processId);
 		}
 		
 		function listProcesses() {
@@ -61,7 +62,7 @@
 		}
 		
 		function getProcesses() {
-			ubuntuProcess.listProcess().success(refreshProcessList);
+			osProcess.listProcess().success(refreshProcessList);
 		}
 		
 		function refreshProcessList(processes, output) {

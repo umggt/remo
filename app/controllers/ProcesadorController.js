@@ -6,6 +6,7 @@
 		
 		var vm = this;
 		
+		vm.filtro = { nombre: '' };
 		vm.procesos = [];
 		
 		vm.finalizar = finalizar;
