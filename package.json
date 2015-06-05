@@ -23,6 +23,7 @@
   "devDependencies": {
     "angular": "^1.4.0",
     "angular-ui-router": "^0.2.15",
+    "bootbox": "^4.4.0",
     "bootstrap": "^3.3.4",
     "electron-packager": "^4.1.2",
     "electron-prebuilt": "^0.27.1",
@@ -30,6 +31,7 @@
     "gulp": "^3.8.11",
     "gulp-run": "^1.6.8",
     "jquery": "^2.1.4",
-    "mousetrap": "^1.5.2"
+    "mousetrap": "^1.5.2",
+    "toastr": "^2.0.4"
   }
 }

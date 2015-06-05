@@ -3,6 +3,9 @@
 (function () {
 	
 	angular.module('remo').service('process', processService);
+
+	var osProcessService = require('os').type() === 'Linux' ? 'ubuntuProcess' : 'testProcess';
+	processService.$inject = [osProcessService, '$timeout', '$log'];
 	
 	/**
 	 * Servicio de gestion de procesos.
@@ -20,11 +23,17 @@
 		svc.onProcessChange = onProcessChange;
 		svc.removeOnProcessChange = removeOnProcessChange;
 		svc.listProcesses = listProcesses;
+		svc.kill = kill;
 		
 		init();
 		
 		function init() {
 			getProcesses();
+		}
+		
+		function kill(processId) {
+			$log.debug('finalizando proceso ' + processId + '...');
+			return ubuntuProcess.kill(processId);
 		}
 		
 		function listProcesses() {
@@ -52,7 +61,6 @@
 		}
 		
 		function getProcesses() {
-			$log.debug('Ejecutando getProcess...');
 			ubuntuProcess.listProcess().success(refreshProcessList);
 		}
 		
@@ -61,7 +69,9 @@
 			if (lastOutput !== output) {
 				if (!lastProcesses) {
 					lastProcesses = processes;
-					processChange({ addedItems: lastProcesses });
+					if (lastProcesses.length > 0) {
+						processChange({ addedItems: lastProcesses });
+					}
 				}
 				else {
 					compareLists(lastProcesses, processes);
@@ -144,7 +154,7 @@
 				originalItem = original[i];
 				
 				for (var j = 0; j < newone.length; j++) {
-					originalItem = newone[j];
+					newItem = newone[j];
 					
 					if (newItem.id === originalItem.id) {
 						found = true;
@@ -174,8 +184,6 @@
 				result = result || {};
 				result.deletedItems = deletedItems;
 			}
-			
-			$log.debug('Result: ', result);
 			
 			if (result) {
 				processChange(result);

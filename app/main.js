@@ -2,6 +2,8 @@
 (function () {
 
 	angular.module('remo', ['ui.router'])
+		.constant('bootbox', window.bootbox)
+		.constant('toastr', window.toastr)
 		.config(configureRoutes);
 	
 	/**
